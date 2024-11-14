@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإبادة مستمرة - عمر العطار</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+     <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+        }
+        /* قسم الـ Hero مع الفيديو */
+        .hero-video {
+            position: relative;
+            height: 50vh; /* تحديد ارتفاع الهيرو */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.3); /* خلفية داكنة لتوضيح النص */
+        }
+        
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            max-height: 50vh; /* تحديد أقصى ارتفاع للفيديو ليكون في حدود الهيرو */
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 10px; /* تقليل الـ padding */
+            background: rgba(0, 0, 0, 0.6); /* خلفية داكنة شفافة للنص */
+            border-radius: 10px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px; /* تقليل المسافات */
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 10px; /* تقليل المسافات */
+        }
+        
+        .hero-content a {
+            background-color: #4e54c8;
+            color: white;
+            padding: 8px 16px; /* تقليل الـ padding */
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .hero-content a:hover {
+            background-color: #3b439c;
+        }
+        .section {
+            padding: 20px 10px; /* تقليل الـ padding */
+        }
+        .slider-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 10px; /* تقليل المسافات بين الكروت */
+            padding: 10px; /* تقليل الـ padding */
+        }
+        .slider-container::-webkit-scrollbar {
+            display: none;
+        }
+        .slide {
+            min-width: 300px;
+            background-color: #4e54c8;
+            color: white;
+            border-radius: 15px;
+            padding: 10px; /* تقليل الـ padding */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 5px; /* تقليل المسافات */
+        }
+        .slide p {
+            font-weight: bold;
+            margin: 3px 0; /* تقليل المسافات */
+        }
+        /* تعديل الكروت في قسم إحصائيات مهمة */
+        #statistics .slide {
+            width: 200px;
+            height: 200px;
+            min-width: 200px;
+            min-height: 200px;
+            padding: 10px; /* تقليل الـ padding */
+        }
+        #statistics .slide img {
+            width: 50px;
+            height: 50px;
+        }
+        /* زيادة حجم الكتابة في قسم إحصائيات مهمة */
+        #statistics .slide p {
+            font-size: 1.2em;
+        }
+        /* تنسيق القسم الجديد */
+        .single-profile {
+            padding: 20px 0;
+            text-align: center;
+        }
+        .single-profile .ratio {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .single-profile video {
+            width: 100%;
+            height: 100%;
+        }
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 10px 0; /* تقليل الـ padding */
+        text-align: center;
+    }
+
+    footer a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 5px; /* تقليل المسافات */
+    }
+
+    footer a:hover {
+        color: #4e54c8;
+    }
+
+    footer a img {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+    footer .social-links {
+        margin-top: 10px; /* تقليل المسافات */
+    }
+    </style>
+
+
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">عمر العطار</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ai-capabilities.html">الـ AI وصل لفين</a></li>
+                    <li class="nav-item"><a class="nav-link" href="palestine.html">الحرية لفلسطين</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">من أنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Hero Section with Video Background -->
+<section class="hero-video">
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="your-video.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+    <div class="hero-content">
+        <h1>الإبادة لا تزال مستمرة</h1>
+        <p>أخواتنا لازالوا بيعانوا من الإبادة الجماعية، واحنا اغلبنا نسي ويمكن حتى معادش مقاطع</p>
+    </div>
+</section>
+
+<!-- مقدمة -->
+<section class="section container text-center">
+    <h3>بفكرك بيهم وبمعاناتهم</h3>
+    <p>بقدر الامكان هحاول افكرك باللي بيحصل واعرفك الوضع وصل لايه لو مكنتش تعرف</p>
+</section>
+
+<!-- إحصائيات مهمة -->
+<section id="statistics" class="section container text-center">
+    <h4>إحصائيات مهمة</h4>
+    <div class="slider-container">
+        <div class="slide">
+            <img src="killed.png" alt="إحصائية 1">
+            <p>عدد القتلى</p>
+            <p>42,000+</p>
+        </div>
+        <div class="slide">
+            <img src="injured.png" alt="إحصائية 2">
+            <p>عدد الجرحى</p>
+            <p>97,886+</p>
+        </div>
+        <div class="slide">
+            <img src="displaced.png" alt="إحصائية 4">
+            <p>عدد النازحين</p>
+            <p>1,900,000</p>
+        </div>
+        <div class="slide">
+            <img src="destroyed_buildings.png" alt="إحصائية 3">
+            <p>المباني المدمرة</p>
+            <p>80,000+</p>
+        </div>
+        <div class="slide">
+            <img src="hospital.png" alt="إحصائية 5">
+            <p>مستشفيات قصفت</p>
+            <p>30 من أصل 36</p>
+        </div>
+        <div class="slide">
+            <img src="school.png" alt="إحصائية 6">
+            <p>المدارس المدمرة</p>
+            <p>90% من المدارس</p>
+        </div>
+        <div class="slide">
+            <img src="Construction.png" alt="إحصائية 7">
+            <p>تكلفة إعادة الإعمار</p>
+            <p>40 مليار دولار</p>
+        </div>
+    </div>
+</section>
+
+<!-- قسم الفيديو الجديد -->
+<section class="single-profile container text-center">
+    <div class="ratio ratio-16x9">
+        <video controls poster="poster-image.jpg">
+            <source src="Yehia.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+    </div>
+    <h4>يحيى السنوار</h4>
+    <p>رحم الله قائدنا المجاهد يحيى السنوار، المعنى الحقيقي لمجاهد من جيل الصحابة، أبهرنا بشجاعته وأنه كان دائمًا في الصفوف الأولى من القتال.</p>
+</section>
+
+<!-- صور المجازر -->
+<section class="section container text-center">
+    <h4>أشهر المجازر</h4>
+    <div class="slider-container">
+        <div class="slide">
+            <img src="mamadani hospital.jpg" alt="مجزرة 1">
+            <p>مجزرة المستشفى المعمداني - 500 قتيل</p>
+            <p>تم قصف ساحة المستشفى من قبل الطيران الإسرائيلي على الرغم من أنها كانت ملجأ لمئات النازحين معظمهم من النساء والأطفال</p>
+        </div>
+        <div class="slide">
+            <img src="Jabalia.jpg" alt="مجزرة 2">
+            <p>مجزرة جباليا - 400 قتيل</p>
+            <p>تم قصف حي سكني كامل بجوار المستشفى الإندونيسي باستخدام 6 قنابل مما أسفر عن استشهاد 400 فلسطيني معظمهم من الأطفال</p>
+        </div>
+        <div class="slide">
+            <img src="Tahhen.jpg" alt="مجزرة 3">
+            <p>مجزرة الطحين - 120 قتيل</p>
+            <p>تخيل أنهم حتى عندما حاولوا أخذ شوية طحين لسد جوعهم تم قصفهم غدرًا رغم أن كل الذين كانوا في المشهد مدنيين يحاولون الحصول على غذاء</p>
+        </div>
+        <div class="slide">
+            <img src="elshifaa.jpg" alt="مجزرة 4">
+            <p>مجزرة الشفاء - 300 قتيل</p>
+            <p>مجزرة من أبشع ما يكون، القوات الخسيسة اقتحمت مستشفى الشفاء ونفذت فيها مجازر بشعة تجاه المرضى والأطقم الطبية، كما أسرت 1000 فلسطيني</p>
+        </div>
+        <div class="slide">
+            <img src="talelsoltan.jpg" alt="مجزرة 5">
+            <p>مجزرة تل السلطان - 45 قتيل</p>
+            <p>في مشهد بشع، تم استهداف خيام النازحين في رفح بمخيم تل السلطان، مما أدى لحرائق بشعة ومشاهد لا يمكن نسيانها، مثل الرضيع بلا رأس</p>
+        </div>
+    </div>
+</section>
+
+<!-- الشخصيات الأيقونية -->
+<section class="section container text-center">
+    <h4>شخصيات أيقونية</h4>
+    <div class="slider-container">
+        <div class="slide">
+            <img src="reem.jpg" alt="شخصية 1">
+            <p>روح الروح</p>
+            <p>من يقدر ينسى الطفلة ريم "روح الروح"، مشهد جدها وهو يحتضنها مستحيل يخرج من ذهني</p>
+        </div>
+        <div class="slide">
+            <img src="dahdouh.jpg" alt="شخصية 2">
+            <p>عائلة وائل الدحدوح</p>
+            <p>الصحفي وائل الدحدوح وعائلته هم أشهر الأيقونات في غزة، خصوصًا بعد استشهاد معظم أبنائه</p>
+        </div>
+        <div class="slide">
+            <img src="shohdaa.jpg" alt="شخصية 3">
+            <p>متعيطش يا زلمة</p>
+            <p>عبارة مستحيل ننساها، طالعة بمنتهى القوة والثبات رغم أن صاحبها استشهد له ابنه البكر قبلها بلحظات</p>
+        </div>
+        <div class="slide">
+            <img src="mato.jpg" alt="شخصية 4">
+            <p>ماتوا بدون ما ياكلوا</p>
+            <p>مستحيل أنسى الأم التي كانت تبكي على أولادها لأنهم ماتوا دون أن يأكلوا، مشهد أيقوني يذكرك بالمأساة</p>
+        </div>
+        <div class="slide">
+            <img src="badr.jpg" alt="شخصية 5">
+            <p>بدر دحلان</p>
+            <p>تم اعتقال بدر دحلان لمدة شهر واحد فقط، شاهد خلالها أسوأ أنواع التعذيب التي سببت له صدمة كبيرة</p>
+        </div>
+    </div>
+</section>
+
+<!-- الدعاء والتذكرة -->
+<section class="section container text-center">
+    <h4>ربنا ينصر أهلنا</h4>
+    <p>ما ذكرته هنا لا شيء مقارنة بما يمرون به فعلاً في حرب استمرت لأكثر من 13 شهرًا حتى اللحظة ضد عدو لا يفرق بين مدني أو مقاوم</p>
+    <p>اللهم احفظ أهلنا في غزة وارزقهم الصبر والقوة. نسألك اللهم أن ترفع عنهم البلاء وتنصرهم على أعدائهم.</p>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <p>© 2024 عمر العطار. جميع الحقوق محفوظة.</p>
+        <div class="contact-info">
+            <a href="tel:+201550912570" class="text-white mx-2">📞 01550912570</a> |
+            <a href="mailto:adattars@gmail.com" class="text-white mx-2">adattars@gmail.com</a>
+        </div>
+        <div class="social-links mt-3">
+            <a href="https://web.facebook.com/3omar.el3tar/" target="_blank" class="text-white mx-3">
+                <img src="facebook-icon.png" alt="Facebook" width="20"> فيسبوك
+            </a> |
+            <a href="https://www.instagram.com/3attar.marketing/" target="_blank" class="text-white mx-3">
+                <img src="instagram-icon.png" alt="Instagram" width="20"> إنستجرام
+            </a>
+        </div>
+        <p class="mt-3">حاسب لحسن الـ AI يقعدك في البيت 😈</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sliders = document.querySelectorAll('.slider-container');
+        sliders.forEach(slider => {
+            let isDown = false;
+            let startX, scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+    });
+</script>
+</body>
+</html>
